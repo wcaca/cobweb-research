@@ -5,6 +5,34 @@
 
 ---
 
+## v0.2.7 · 2026-07-02 · 长程任务: 路由/API/db 摸清 + 3 项修复
+
+### Changed (system-self commit 2e4f12f)
+- **长程任务: 逐项检查 sf 项目**
+- 8 个 main nav + 20+ nested 路由测试 (全部 HTTP 200)
+- 49 个 API endpoint 摸清 (45 个 GET OK, 4 个 401/400 已知)
+- 26 张 db 表摸清 + 行数统计
+- 16 张截图 (8 mobile + 8 desktop)
+
+### 修复 3 项
+1. **/expression 父路由 404**: 加 page.tsx redirect → /expression/write
+2. **MOBILE_TABS 缺 /cobweb**: 改成 5 RFL tabs (/  /cobweb  /learning  /universe  /profile)
+3. **Desktop sidebar 无 RFL bar**: 在 footer 上方加 mini RFL 5 层 indicator
+
+### 已知问题 (deployment 限制, code OK)
+- /map 用 Three.js WebGL, headless chrome 加载失败 (用户正常浏览器 OK)
+- /api/pre-render/cleanup 401 (cron auth, 需要 x-cleanup-secret header)
+- 3 张 cobweb_v2 表都是 0 行 (新加的, 等 v2 实施用)
+
+### 完整成果
+- 8 main nav: / /cobweb /map /learning /universe /ideal /profile /workbench (全 200)
+- 20+ nested routes (全 200)
+- 49 API endpoints 摸清
+- 16 张截图归档
+- 3 个 fix 上线
+
+---
+
 ## v0.2.6 · 2026-07-01 · daily synthesis + 凌晨 5 点 cron
 
 ### Changed (system-self commit 5a9b8d5)
