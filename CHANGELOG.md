@@ -5,6 +5,30 @@
 
 ---
 
+## v0.2.6 · 2026-07-01 · daily synthesis + 凌晨 5 点 cron
+
+### Changed (system-self commit 5a9b8d5)
+- **daily-synthesis.sh** 新增: 凌晨 5 点跑, 聚合过去 24h insight
+- 5 段合成: 今日主线 / 跨 commit 关联 / 累积观察 / 风险 / 明日候选
+- 输出: `.insights/daily/YYYY-MM-DD.md` (3.5KB)
+- **cron 注册**: `/etc/cron.d/sf-insight-cron` (0 5 * * *)
+- **文档扩展**: docs/INSIGHT-HARNESS.md 加 Daily Synthesis 段
+- 跨抽象层反思链: commit (4 段) + daily (5 段) + 未来 weekly/月
+
+### 实测 (2026-07-01 跑 1 次)
+- 6 个 commit 合成 OK
+- 跨 commit 关联 4 条
+- 累积观察 4 条 (数据驱动 / UX 优先 / 渐进 / 研究→产品)
+- 风险 3 条 (信息过载 / 性能 / 可访问性)
+- 明日候选 3 条
+
+### 持续性时间表
+- 每 commit: post-commit hook → insight (微观)
+- 每天 5am: cron → daily synthesis (中观)
+- 每周/月: 未来扩展 (宏观)
+
+---
+
 ## v0.2.5 · 2026-07-01 · system-self insight harness 落地
 
 ### Changed (system-self commit bac5a48)
