@@ -5,6 +5,36 @@
 
 ---
 
+## v0.2.5 · 2026-07-01 · system-self insight harness 落地
+
+### Changed (system-self commit bac5a48)
+- **insight harness** 在 system-self 项目里完整落地
+- 4 件套: scripts/insight-extract.sh + scripts/post-commit + .insights/<sha>.md + docs/INSIGHT-HARNESS.md
+- LLM API 调用: MiniMax TEXT_01
+- 4 段结构化反思: What changed / What pattern / What could be wrong / What next
+- 首跑 3 个 commit (cb044ca/c06eff5/0cfc3cc) 生成 3 个 insight
+
+### 设计哲学
+- **harness 触发** (post-commit hook, async 不阻塞)
+- **LLM 认知** (看 diff, 输出 4 段反思, 不依赖 user PIVOT)
+- **沉淀** (.insights/<sha>.md + INDEX.md 时间序)
+- **跨领域持续** (主页/cobweb/learning/profile 共用 .insights/)
+- **本地生成不进 git** (.gitignore .insights/*.md)
+
+### User insight 完整引用
+"只在 sf 这个项目上进行, 但是每步都进行顿悟,
+顿悟是基于 llm 本身的认知和知识链的,
+关键是让 harness 域 llm 配合能持续把顿悟唤醒并保存,
+进而在不同领域保持"
+
+### Insight 示例 (cb044ca)
+- What changed: header 加 RFL 5 层 (A/K/B/T/R)
+- What pattern: 数据可视化从抽象到具体 (研究→产品具象化)
+- What could be wrong: 信息过载 / 视觉复杂度 / 功能冗余
+- What next: 用户测试 / 动态展示 / 进一步简化
+
+---
+
 ## v0.2.4 · 2026-07-01 · cobweb-v2 B.1 数据模型落地
 
 ### Changed (system-self commit 0cfc3cc)
