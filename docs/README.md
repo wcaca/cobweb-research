@@ -10,6 +10,7 @@
 |----|----|----|
 | [METHODOLOGY.md](../METHODOLOGY.md) | 研究者 + 算法引用方 | 5 状态 + 4 算法 + RFL + 双层架构 |
 | [ONTOLOGY.md](ONTOLOGY.md) | **system-self 产品团队** | 怎么把 RFL 落到产品 (主页 / 路由 / 文案) |
+| [COBWEB-V2.md](COBWEB-V2.md) | **cobweb 模块设计者** | v2 概念设计 (从知识图到觉察镜) |
 | [CHANGELOG.md](../CHANGELOG.md) | 所有人 | 版本 + 决策 + 用户洞察引用 |
 | [VISION-PAGE 04](../README.md) | 产品愿景 | 视觉化方法论 |
 

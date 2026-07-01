@@ -5,6 +5,42 @@
 
 ---
 
+## v0.2.3 · 2026-07-01 · cobweb-v2 概念设计 (v1 缺陷诊断)
+
+### Changed
+- **docs/COBWEB-V2.md** 新增 (405 行)
+- **5 个结构性缺陷** (v1 cobweb 不是 RFL 镜子):
+  1. 知识图谱被误当自我工具
+  2. 节点大小按 degree 不是觉察深度
+  3. 拓扑里没有"我"
+  4. 没有"未知" (known/emerging/implicit)
+  5. 没有"自我对话" (Mavis 应该触发型不是标注型)
+
+### Decisions (D-CW2-01 ~ D-CW2-05)
+- D-CW2-01: 中心是"你", 不是 degree 最高节点
+- D-CW2-02: 节点大小 = awarenessDepth, 不是 degree
+- D-CW2-03: 3 类节点共存 (known/emerging/implicit)
+- D-CW2-04: Mavis 沉默, 只触发 (5 个触发条件)
+- D-CW2-05: 时间 = 当下 + 此刻, 不只是历史
+
+### Rationale
+用户洞察 (2026-07-01):
+> "线条杂乱, 不能反映信息真实的层级,
+> 都是已知没有未知,
+> 好像一个人看到信息都不能跟自身整合起来"
+
+→ 当前 cobweb 只实现了 RFL 5 层面中的 1 层 (K 知识层)
+→ A 意识 / B 行为 / T 时间 / R 关系 全缺失
+→ v2 不是 UI 优化, 是结构性重新设计
+→ 阶段 A: 沉淀方法论 (本文档)
+→ 阶段 C: 最小改动试 1 个核心 (中心是"你"+awarenessDepth)
+→ 阶段 B: 全量 v2 (数据模型 + 算法 + UI + Mavis 触发 + LLM 推算 implicit)
+
+### 不动代码
+本阶段只沉淀方法论, 不动 system-self cobweb 代码.
+
+---
+
 ## v0.2.2 · 2026-07-01 · system-self AppShell 移动端 RFL bar
 
 ### Changed
