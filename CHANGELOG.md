@@ -5,6 +5,32 @@
 
 ---
 
+## v0.2.4 · 2026-07-01 · cobweb-v2 B.1 数据模型落地
+
+### Changed (system-self commit 0cfc3cc)
+- **3 张新表** 落地 + 验证:
+  1. cobweb_node_awareness (14 cols) - 节点觉察深度
+  2. cobweb_implicit_nodes (12 cols) - LLM 推算的隐式节点
+  3. cobweb_awareness_events (8 cols) - session 内实时觉察事件
+- **migration 0005** 写好 + 应用
+- **schema 文件** cobweb-awareness.ts
+- **journal + snapshot** 更新
+- **不动 UI / 不动现有 cobweb 代码**
+
+### Verified
+- ✓ tsc --noEmit pass
+- ✓ 3 张表 columns 跟 schema 一致
+- ✓ insert / select / delete 测试 OK
+- ✓ D-CW2-01 ~ D-CW2-05 决策实现基础
+
+### 下一步 (B.2 ~ B.5)
+- B.2 算法层: computeAwarenessDepth / classifyNodeType / LLM 推算 implicit
+- B.3 前端: 中心是"你" + 3 类节点 visual
+- B.4 Mavis 触发器 (5 类: linger/repeat_hover/on_emerging/on_implicit/session_return)
+- B.5 LLM 推算 cron (每天 1 次 + journal 触发)
+
+---
+
 ## v0.2.3 · 2026-07-01 · cobweb-v2 概念设计 (v1 缺陷诊断)
 
 ### Changed
