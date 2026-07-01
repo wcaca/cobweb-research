@@ -84,7 +84,7 @@ export class KernelDetector {
     for (const node of nodes) {
       const signals = this.computeSignals(node, edges, behavior);
       const totalScore = this.weightedScore(signals);
-      if (totalScore > 0.5) {
+      if (totalScore > 0.15) {
         const state = this.classifyState(node, signals);
         if (state !== 'none') {
           candidates.push({
@@ -186,9 +186,9 @@ export class KernelDetector {
     const cent = centralityOf(node);
     const fog = fogginessOf(node);
     const degreeSignal = signals.find(s => s.source === 'degree')?.score ?? 0;
-    if (fog > 0.5 && degreeSignal > 0.3) return 'fog';
-    if (cent < 0.3 && degreeSignal > 0.4) return 'edge';
-    if (cent > 0.6 && degreeSignal > 0.5) return 'center';
+    if (fog >= 0.5 && degreeSignal >= 0.2) return "fog";
+    if (cent <= 0.3 && degreeSignal >= 0.2) return "edge";
+    if (cent >= 0.6 && degreeSignal >= 0.2) return "center";
     return 'none';
   }
 
