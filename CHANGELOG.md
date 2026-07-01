@@ -5,6 +5,34 @@
 
 ---
 
+## v0.2.1 · 2026-07-01 · system-self 主页 RFL 落地
+
+### Changed
+- **system-self** 主仓库 commit cb044ca: 主页 (TodayImagingScreen) header 改造
+  - 旧: 迷茫浓度% / X天连续 / 今日手账 X篇 (单层显示)
+  - 新: RFL 5 层 indicator 同时可见
+    - 上行: '▸ 5 层 · 此刻' + 'A · K · B · T · R'
+    - 下行: A 觉察% / K N 闭环 / B N 天 / T 今天 / R 在场
+  - 设计: 50 行新代码, 1 行删除, 没碰其他组件
+
+### Verified (Playwright + dev user)
+- ✓ Token 拿到, 主页 200
+- ✓ 5 层 indicator 全部渲染
+- ✓ 实测值: A 57% / K 8 闭环 / T 7月1日 / R 在场
+- ✓ tsc --noEmit pass / bun build OK / system-self.service active (3030)
+
+### Screenshot
+- `screenshots/system-self-rfl-home.png` — 主页 RFL 5 层 indicator
+
+### Rationale
+ONTOLOGY.md 规则 4: "多视角同时可见"
+- 旧版主页只有知识层 (洞察) + 行为层 (输入)
+- 现在意识 + 知识 + 行为 + 时间 + 关系 5 层同步展示
+- 用户进首页 1 秒内看到 5 个视角同时存在
+- 不再"切换 tab 找东西", 而是"打开就在闭环里"
+
+---
+
 ## v0.2 · 2026-07-01 · RFL 概念 + 双层结构
 
 ### Added
