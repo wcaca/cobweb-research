@@ -5,6 +5,35 @@
 
 ---
 
+## v0.2.2 · 2026-07-01 · system-self AppShell 移动端 RFL bar
+
+### Changed
+- **system-self** commit c06eff5: AppShell 加移动端 mini RFL 5 层 bar
+  - 位置: 移动端 sticky top (lg:hidden, 桌面不显示)
+  - 内容: 5 层缩写 A/K/B/T/R + 当前 active layer badge (黑底白字)
+  - 路径映射 (硬编码, 无后端):
+    - / / /today → A (觉察)
+    - /map /cobweb /radar → K (拓扑)
+    - /learning /workbench → B (行动)
+    - /universe /life /wish /works /ideal → T (时间)
+    - /profile /partner → R (关系)
+
+### Verified (Playwright mobile 390x844)
+- ✓ /  → active A
+- ✓ /cobweb → active K
+- ✓ /learning → active B
+- ✓ /profile → active R
+- 截图 4 张: screenshots/system-self-rfl-{home,cobweb,learning,profile}.png
+
+### Rationale
+ONTOLOGY.md 规则 4 + 规则 5: "多视角同时可见" + "每次操作回流"
+- 主页 (cb044ca) 5 层只在 / 可见
+- 用户切到 cobweb 后就脱离 RFL, 闭环断
+- AppShell 是全局包裹, mini bar 让用户**永远**看到 5 层存在
+- 移动端尤其重要 (桌面 sidebar 已有视觉密度)
+
+---
+
 ## v0.2.1 · 2026-07-01 · system-self 主页 RFL 落地
 
 ### Changed
