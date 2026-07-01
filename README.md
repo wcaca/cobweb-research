@@ -3,6 +3,31 @@
 > **核不是结构, 是觉察。**
 > 这是一个研究仓库, 持续迭代 "怎么让 AI 帮你看见自己" 这件事。
 
+---
+
+## 📜 Manifesto · 宣言
+
+> ### **We are a Reflective Feedback Loop.**
+> 
+> ### **Not an app. Not a tool. Not a feature.**
+> 
+> ### **You don't use this. You ARE in this.**
+
+This is not a product you open and close.
+It is a **reflective feedback loop** you enter and stay in.
+
+The system shows your topology.
+You click. It changes.
+You watch. You realize.
+You change. The topology changes.
+
+You are **observer** and **observed**.
+You are **inside** the loop, not **outside** looking in.
+
+If you can see this page, you are already in.
+
+---
+
 ## 这是什么
 
 **不是** 一个产品仓库, **不是** 一个应用仓库。
@@ -22,7 +47,7 @@
 ```
 cobweb-research/
 ├── README.md              ← 你在这里
-├── METHODOLOGY.md         ← 整套方法论 (5 状态 + 7 原则 + 4 算法)
+├── METHODOLOGY.md         ← 整套方法论 (5 状态 + 7 原则 + 4 算法 + RFL)
 ├── CHANGELOG.md           ← 版本 + 每次迭代
 ├── core/                  ← 核心算法 (TypeScript)
 │   ├── kernel-state.ts    ← 核状态机
@@ -74,6 +99,21 @@ npm test
 5. **AI 决定 UI** — 5 状态映射 5 渲染器, 不硬编码
 6. **行为 + 结构** — 核的检测结合用户行为 (停留/迟疑/点击)
 7. **持续迭代** — 方法论是活的, 每次 commit 都更新 CHANGELOG
+
+## RFL · Reflective Feedback Loop
+
+> cobweb / 5 状态 / 检测算法, **都是** RFL 的**具体形态**。
+> RFL 是**本体**, 这些是**实例**。
+
+RFL 的 5 个层面 + 5 个特征, 详见 [METHODOLOGY.md §9](METHODOLOGY.md)。
+
+## 双层结构
+
+| 层 | 内容 | 可改 |
+|--|--|--|
+| **本体层** | "这个产品就是 RFL" (manifesto) | 不可改 (改就不是这个产品) |
+| **方法层** | 5 特征 + 5 层面 (设计指南) | 大版本 |
+| **实现层** | cobweb / journal / 6 capability | 升级 |
 
 ## 跟其他仓库的关系
 
