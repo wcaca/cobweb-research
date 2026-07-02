@@ -5,6 +5,33 @@
 
 ---
 
+## v0.2.10 · 2026-07-02 · P2 前端切到新 API (RFL + Profile)
+
+### Changed (system-self commit 39b6fac + f249afb)
+**RFL indicator frontend** (commit 39b6fac):
+- TodayImagingScreen header RFL indicator 切到 /api/identity/rfl (single source)
+- AppShell desktop sidebar mini 5-layer bar 显示真实活跃度
+- AppShell mobile sticky bar 显示真实数字
+- 30s setInterval 刷新 (pathname 变化也刷新)
+
+**ProfileScreen me header** (commit f249afb):
+- 加 /api/user/me fetch + header section
+- 显示 avatar + displayName + primaryColor + 加入日期 + 5 counts
+- 加 RFL → 链接 (调试用)
+
+### Verification
+- tsc pass, build pass
+- 4 endpoint 全 200
+- 主页 RFL indicator 显示真实数据
+- Profile 页显示显影者 🌱 #CE7E3E + counts
+
+### 影响
+- 完成度 65% → 75% → 80%
+- 用户能在任何页面看到活的状态
+- 数据有 single source of truth
+
+---
+
 ## v0.2.9 · 2026-07-02 · API 从根重构 (8 大域统一)
 
 ### Background
