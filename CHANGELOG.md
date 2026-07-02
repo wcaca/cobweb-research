@@ -5,6 +5,40 @@
 
 ---
 
+## v0.2.9 · 2026-07-02 · API 从根重构 (8 大域统一)
+
+### Background
+深度测试发现 sf 项目真完成度 = 65% (不是表层 100%)
+5 个 API 缺失 / 命名混乱
+
+### Changed (system-self commit 914aec1)
+**新加 4 endpoint:**
+- /api/identity/loops         → 闭环列表 (DB 15 行, 已暴露)
+- /api/identity/insights/recent → 跨 session 洞察 recall
+- /api/identity/rfl           → RFL 5 层实时指标 (A/K/B/T/R)
+- /api/user/me                → 完整 profile (displayName/avatar/counts)
+
+**8 大域架构 (标准)**:
+1. /api/auth/*    认证
+2. /api/user/*    用户域
+3. /api/journal/* 日记
+4. /api/cobweb/*  蛛网
+5. /api/learn/*   学习
+6. /api/identity/* 身份/闭环/洞察
+7. /api/agent/*   AI 干预
+8. /api/system/*  系统 (取代 admin+shell+materials+mcp)
+
+**新加 2 文档**:
+- docs/API-REFERENCE.md (192 行) - 8 大域全列 + 响应示例
+- docs/ARCHITECTURE.md - 重构背景 + 验证 + 下一步
+
+### Verification
+- 4 endpoint 全 200, 真数据返回
+- tsc 通过, build 通过, service 跑
+- 完成度 65% → 70%
+
+---
+
 ## v0.2.8 · 2026-07-02 · insight-extract SHA 统一 (发现新 bug)
 
 ### Changed (system-self commit 5b9cc89)
