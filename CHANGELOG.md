@@ -5,6 +5,32 @@
 
 ---
 
+## v0.2.11 · 2026-07-02 · P1 整合 + RFL 视觉优化 + Daily 验真
+
+### Changed (system-self commit 4778dd5)
+**P1 整合 (8 大域彻底)**:
+- 新加 alias: /api/identity/staleness (同源 /api/profile/staleness)
+- 新加 alias: /api/user/skills (同源 /api/skills)
+- 旧 endpoint 加 Sunset header (Wed, 01 Oct 2026) + Deprecation + Link successor-version
+
+**RFL indicator 视觉优化**:
+- ternary 提到 IIFE 避开 TS 解析坑
+- 加载时: opacity-30 + 灰色 (A···· K···· B···· T···· R····)
+- 加载完: 紧凑真实数字 (A·33% K·15闭环/23节点 B·0天 T·07-02 R·active)
+
+### Daily synthesis 验真
+- 2026-07-02 07:00 UTC 手动跑 daily-synthesis.sh
+- 生成 .insights/daily/2026-07-02.md (30 行, 5 段齐全)
+- 跨 commit 关联准: "用户数据整合与展示优化" / "导航结构的一致性调整" / "数据源集中化与自动化"
+- LLM 提了"跨层次反思链"概念 (commit 级 → daily 级 → 未来的 weekly/monthly)
+
+### 影响
+- 完成度 80% → 85%
+- 8 大域彻底 (2 命名混乱解决)
+- 用户体验: RFL indicator 加载态更明显 + 数据更紧凑
+
+---
+
 ## v0.2.10 · 2026-07-02 · P2 前端切到新 API (RFL + Profile)
 
 ### Changed (system-self commit 39b6fac + f249afb)

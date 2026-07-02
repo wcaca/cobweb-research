@@ -190,3 +190,16 @@ prefetch / preview / deep / continue / options / capability/[id] / papers/*
 ## 版本
 
 v1.0 · 2026-07-02 · 重构: 加 4 endpoint + 8 大域统一
+
+## Sunset / Deprecation (2026-10-01)
+
+| 旧 endpoint | 新 alias | Sunset date |
+|---|---|---|
+| `/api/profile/staleness` | `/api/identity/staleness` | 2026-10-01 |
+| `/api/skills` | `/api/user/skills` | 2026-10-01 |
+| `/api/profile` | `/api/user/me` | TBD |
+
+旧 endpoint 加 header:
+- `Sunset: Wed, 01 Oct 2026 00:00:00 GMT`
+- `Deprecation: true`
+- `Link: <新路径>; rel="successor-version"`
