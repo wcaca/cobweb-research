@@ -5,6 +5,28 @@
 
 ---
 
+## v0.2.8 · 2026-07-02 · insight-extract SHA 统一 (发现新 bug)
+
+### Changed (system-self commit 5b9cc89)
+- **新发现 bug**: insight-extract 写文件用 full SHA, daily-synthesis 用 short
+- 修 insight-extract.sh → 短 SHA (跟 daily 一致)
+- INDEX.md 重写: 13 commit + 4 主线 + 5 领域
+- 清理 .insights/ 重复文件
+
+### 凌晨 5 点 cron 自动跑 (今天)
+- /var/log/sf-insight.log: ✓ daily synthesis saved to .insights/daily/2026-07-01.md
+- generated 2026-07-01T21:00:24Z (北京时间 5am)
+- 8 commit 覆盖: cb044ca → bac5a48 → 5a9b8d5 → 2e4f12f 等
+- 5 段齐全 (主线/关联/累积/风险/明日)
+
+### 当前状态
+- 13 .insights/<sha>.md (短 SHA)
+- 1 .insights/daily/2026-07-01.md
+- INDEX.md 干净
+- cron 明天 5am 自动跑
+
+---
+
 ## v0.2.7 · 2026-07-02 · 长程任务: 路由/API/db 摸清 + 3 项修复
 
 ### Changed (system-self commit 2e4f12f)
